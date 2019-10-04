@@ -21,7 +21,8 @@ namespace TeduShop.Model.Models
         [Required]
         [MaxLength(256)]
         public string Alias { get; set; }
-        public XElement MoreImages { get; set; }
+        [Column(TypeName ="xml")]
+        public String MoreImages { get; set; }
         public decimal Price { get; set; }
         public decimal? PromotionPrice { get; set; }
         public int? Warranty { get; set; }
@@ -38,6 +39,6 @@ namespace TeduShop.Model.Models
         [ForeignKey("CategoryID")]
         public virtual ProductCategory ProductCategory { get; set; }
 
-        public virtual ProductTag ProductTag { get; set; }
+        
     }
 }
